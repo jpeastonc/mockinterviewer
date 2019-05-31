@@ -53,6 +53,14 @@ class ReflexionQuestionsController < ApplicationController
     end
   end
 
+  def destroy_row_from_question
+    @reflexion_question = ReflexionQuestion.find(params.fetch("id_to_remove"))
+
+    @reflexion_question.destroy
+
+    redirect_to("/questions/#{@reflexion_question.question_id}", notice: "ReflexionQuestion deleted successfully.")
+  end
+
   def destroy_row
     @reflexion_question = ReflexionQuestion.find(params.fetch("id_to_remove"))
 

@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_user_question/:id_to_remove", { :controller => "user_questions", :action => "destroy_row" })
+  get("/delete_user_question_from_user/:id_to_remove", { :controller => "user_questions", :action => "destroy_row_from_user" })
+  get("/delete_user_question_from_question/:id_to_remove", { :controller => "user_questions", :action => "destroy_row_from_question" })
 
   #------------------------------
 
@@ -56,6 +58,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_reflexion_question/:id_to_remove", { :controller => "reflexion_questions", :action => "destroy_row" })
+  get("/delete_reflexion_question_from_question/:id_to_remove", { :controller => "reflexion_questions", :action => "destroy_row_from_question" })
 
   #------------------------------
 
@@ -75,6 +78,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_question_tip/:id_to_remove", { :controller => "question_tips", :action => "destroy_row" })
+  get("/delete_question_tip_from_question/:id_to_remove", { :controller => "question_tips", :action => "destroy_row_from_question" })
 
   #------------------------------
 
@@ -122,6 +126,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_question_category/:id_to_remove", { :controller => "question_categories", :action => "destroy_row" })
+  get("/delete_question_category_from_category/:id_to_remove", { :controller => "question_categories", :action => "destroy_row_from_category" })
+  get("/delete_question_category_from_question/:id_to_remove", { :controller => "question_categories", :action => "destroy_row_from_question" })
 
   #------------------------------
 

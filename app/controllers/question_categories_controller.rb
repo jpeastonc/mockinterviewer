@@ -53,6 +53,22 @@ class QuestionCategoriesController < ApplicationController
     end
   end
 
+  def destroy_row_from_question
+    @question_category = QuestionCategory.find(params.fetch("id_to_remove"))
+
+    @question_category.destroy
+
+    redirect_to("/questions/#{@question_category.question_id}", notice: "QuestionCategory deleted successfully.")
+  end
+
+  def destroy_row_from_category
+    @question_category = QuestionCategory.find(params.fetch("id_to_remove"))
+
+    @question_category.destroy
+
+    redirect_to("/categories/#{@question_category.category_id}", notice: "QuestionCategory deleted successfully.")
+  end
+
   def destroy_row
     @question_category = QuestionCategory.find(params.fetch("id_to_remove"))
 

@@ -1,0 +1,37 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Reflexion Questions
+
+    <a data-toggle="collapse" href="#question_reflexion_questions_new_form">
+      Add reflexion question
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @question.reflexion_questions.each do |reflexion_question| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/reflexion_questions/<%= reflexion_question.id %>">
+          <%= reflexion_question.question_id %>
+        </a>
+        <!-- Show link end -->
+
+        <!-- Delete link start -->
+        <a href="/delete_reflexion_question_from_question/<%= reflexion_question.id %>">
+          Delete
+        </a>
+        <!-- Delete link end -->
+
+      </li>
+    <% end %>
+
+    <div class="card-footer">
+      <div class="collapse" id="question_reflexion_questions_new_form">
+        <!-- New associationcollection form start -->
+
+        <!-- New associationcollection form end -->
+      </div>
+    </div>
+
+  </ul>
+</div>

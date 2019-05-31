@@ -53,6 +53,22 @@ class UserQuestionsController < ApplicationController
     end
   end
 
+  def destroy_row_from_question
+    @user_question = UserQuestion.find(params.fetch("id_to_remove"))
+
+    @user_question.destroy
+
+    redirect_to("/questions/#{@user_question.question_id}", notice: "UserQuestion deleted successfully.")
+  end
+
+  def destroy_row_from_user
+    @user_question = UserQuestion.find(params.fetch("id_to_remove"))
+
+    @user_question.destroy
+
+    redirect_to("/users/#{@user_question.user_id}", notice: "UserQuestion deleted successfully.")
+  end
+
   def destroy_row
     @user_question = UserQuestion.find(params.fetch("id_to_remove"))
 

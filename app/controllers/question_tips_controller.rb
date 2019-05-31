@@ -53,6 +53,14 @@ class QuestionTipsController < ApplicationController
     end
   end
 
+  def destroy_row_from_question
+    @question_tip = QuestionTip.find(params.fetch("id_to_remove"))
+
+    @question_tip.destroy
+
+    redirect_to("/questions/#{@question_tip.question_id}", notice: "QuestionTip deleted successfully.")
+  end
+
   def destroy_row
     @question_tip = QuestionTip.find(params.fetch("id_to_remove"))
 
