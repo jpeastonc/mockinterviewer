@@ -1,6 +1,7 @@
 class QuestionTipsController < ApplicationController
   def index
-    @question_tips = QuestionTip.page(params[:page]).per(10)
+    @q = QuestionTip.ransack(params[:q])
+    @question_tips = @q.result(:distinct => true).includes(:question).page(params[:page]).per(10)
 
     render("question_tip_templates/index.html.erb")
   end

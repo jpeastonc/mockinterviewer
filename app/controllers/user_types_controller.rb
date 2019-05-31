@@ -1,6 +1,7 @@
 class UserTypesController < ApplicationController
   def index
-    @user_types = UserType.page(params[:page]).per(10)
+    @q = UserType.ransack(params[:q])
+    @user_types = @q.result(:distinct => true).includes(:users).page(params[:page]).per(10)
 
     render("user_type_templates/index.html.erb")
   end

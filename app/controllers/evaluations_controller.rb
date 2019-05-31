@@ -1,6 +1,7 @@
 class EvaluationsController < ApplicationController
   def index
-    @evaluations = Evaluation.page(params[:page]).per(10)
+    @q = Evaluation.ransack(params[:q])
+    @evaluations = @q.result(:distinct => true).includes(:user_question, :user).page(params[:page]).per(10)
 
     render("evaluation_templates/index.html.erb")
   end

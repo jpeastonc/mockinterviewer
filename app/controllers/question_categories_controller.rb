@@ -1,6 +1,7 @@
 class QuestionCategoriesController < ApplicationController
   def index
-    @question_categories = QuestionCategory.page(params[:page]).per(10)
+    @q = QuestionCategory.ransack(params[:q])
+    @question_categories = @q.result(:distinct => true).includes(:question, :category).page(params[:page]).per(10)
 
     render("question_category_templates/index.html.erb")
   end

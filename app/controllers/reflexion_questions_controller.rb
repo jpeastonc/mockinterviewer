@@ -1,6 +1,7 @@
 class ReflexionQuestionsController < ApplicationController
   def index
-    @reflexion_questions = ReflexionQuestion.page(params[:page]).per(10)
+    @q = ReflexionQuestion.ransack(params[:q])
+    @reflexion_questions = @q.result(:distinct => true).includes(:question).page(params[:page]).per(10)
 
     render("reflexion_question_templates/index.html.erb")
   end
