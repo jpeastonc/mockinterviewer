@@ -1,0 +1,56 @@
+<!-- Validation failure messages -->
+<% if @question_category.present? %>
+  <% if @question_category.errors.any? %>
+    <% @question_category.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new question category
+</h1>
+
+
+<hr>
+
+<!-- Form question_category start -->
+<form action="/create_question_category" method="post">
+<!-- Form question_category end -->
+
+  <!-- Label and input for question_id start -->
+  <div class="form-group">
+    <label for="question_id">
+      Question
+    </label>
+
+    <!-- Input for question_id start -->
+    <input type="text" id="question_id" name="question_id" class="form-control" value="<%= @question_category.question_id %>">
+    <!-- Input for question_id end -->
+  </div>
+  <!-- Label and input for question_id end -->
+
+  <!-- Label and input for category_id start -->
+  <div class="form-group">
+    <label for="category_id">
+      Category
+    </label>
+
+    <!-- Input for category_id start -->
+    <input type="text" id="category_id" name="category_id" class="form-control" value="<%= @question_category.category_id %>">
+    <!-- Input for category_id end -->
+  </div>
+  <!-- Label and input for category_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create question category
+  </button>
+</form>
+
+<hr>
+
+<a href="/question_categories">
+  Go back
+</a>
