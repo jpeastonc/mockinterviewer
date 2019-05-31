@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the User question resource:
+
+  # CREATE
+  get("/user_questions/new", { :controller => "user_questions", :action => "new_form" })
+  post("/create_user_question", { :controller => "user_questions", :action => "create_row" })
+
+  # READ
+  get("/user_questions", { :controller => "user_questions", :action => "index" })
+  get("/user_questions/:id_to_display", { :controller => "user_questions", :action => "show" })
+
+  # UPDATE
+  get("/user_questions/:prefill_with_id/edit", { :controller => "user_questions", :action => "edit_form" })
+  post("/update_user_question/:id_to_modify", { :controller => "user_questions", :action => "update_row" })
+
+  # DELETE
+  get("/delete_user_question/:id_to_remove", { :controller => "user_questions", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the User type resource:
 
   # CREATE

@@ -1,0 +1,73 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      User question #<%= @user_question.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/user_questions" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link user_question start -->
+      <div class="col">
+        <a href="/user_questions/<%= @user_question.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit user question
+        </a>
+      </div>
+      <!-- Edit link user_question end -->
+
+      <!-- Delete link user_question start -->
+      <div class="col">
+        <a href="/delete_user_question/<%= @user_question.id %>" class="btn btn-block btn-outline-secondary">
+          Delete user question
+        </a>
+      </div>
+      <!-- Delete link user_question end -->
+    </div>
+
+    <dl>
+      <dt>
+        User
+      </dt>
+      <!-- Display user_id start -->
+      <dd>
+        <%= @user_question.user_id %>
+      </dd>
+      <!-- Display user_id end -->
+
+      <dt>
+        Question
+      </dt>
+      <!-- Display question_id start -->
+      <dd>
+        <%= @user_question.question_id %>
+      </dd>
+      <!-- Display question_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@user_question.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@user_question.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

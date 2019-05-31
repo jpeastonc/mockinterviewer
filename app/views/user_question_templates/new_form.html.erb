@@ -1,0 +1,45 @@
+<h1>
+  Add a new user question
+</h1>
+
+
+<hr>
+
+<!-- Form user_question start -->
+<form action="/create_user_question" method="post">
+<!-- Form user_question end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for question_id start -->
+  <div class="form-group">
+    <label for="question_id">
+      Question
+    </label>
+
+    <!-- Input for question_id start -->
+    <input type="text" id="question_id" name="question_id" class="form-control">
+    <!-- Input for question_id end -->
+  </div>
+  <!-- Label and input for question_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create user question
+  </button>
+</form>
+
+<hr>
+
+<a href="/user_questions">
+  Go back
+</a>
