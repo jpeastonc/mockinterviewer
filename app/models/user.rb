@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   # Direct associations
 
+  belongs_to :user_type,
+             :counter_cache => true
+
   has_many   :user_questions,
              :dependent => :destroy
 
