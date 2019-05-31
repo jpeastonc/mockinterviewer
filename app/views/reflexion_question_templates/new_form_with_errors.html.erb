@@ -1,0 +1,56 @@
+<!-- Validation failure messages -->
+<% if @reflexion_question.present? %>
+  <% if @reflexion_question.errors.any? %>
+    <% @reflexion_question.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new reflexion question
+</h1>
+
+
+<hr>
+
+<!-- Form reflexion_question start -->
+<form action="/create_reflexion_question" method="post">
+<!-- Form reflexion_question end -->
+
+  <!-- Label and input for question_id start -->
+  <div class="form-group">
+    <label for="question_id">
+      Question
+    </label>
+
+    <!-- Input for question_id start -->
+    <input type="text" id="question_id" name="question_id" class="form-control" value="<%= @reflexion_question.question_id %>">
+    <!-- Input for question_id end -->
+  </div>
+  <!-- Label and input for question_id end -->
+
+  <!-- Label and input for reflexion_question start -->
+  <div class="form-group">
+    <label for="reflexion_question">
+      Reflexion question
+    </label>
+
+    <!-- Input for reflexion_question start -->
+    <input type="text" id="reflexion_question" name="reflexion_question" class="form-control" value="<%= @reflexion_question.reflexion_question %>">
+    <!-- Input for reflexion_question end -->
+  </div>
+  <!-- Label and input for reflexion_question end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create reflexion question
+  </button>
+</form>
+
+<hr>
+
+<a href="/reflexion_questions">
+  Go back
+</a>

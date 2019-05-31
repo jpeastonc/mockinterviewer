@@ -1,0 +1,73 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Reflexion question #<%= @reflexion_question.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/reflexion_questions" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link reflexion_question start -->
+      <div class="col">
+        <a href="/reflexion_questions/<%= @reflexion_question.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit reflexion question
+        </a>
+      </div>
+      <!-- Edit link reflexion_question end -->
+
+      <!-- Delete link reflexion_question start -->
+      <div class="col">
+        <a href="/delete_reflexion_question/<%= @reflexion_question.id %>" class="btn btn-block btn-outline-secondary">
+          Delete reflexion question
+        </a>
+      </div>
+      <!-- Delete link reflexion_question end -->
+    </div>
+
+    <dl>
+      <dt>
+        Question
+      </dt>
+      <!-- Display question_id start -->
+      <dd>
+        <%= @reflexion_question.question_id %>
+      </dd>
+      <!-- Display question_id end -->
+
+      <dt>
+        Reflexion question
+      </dt>
+      <!-- Display reflexion_question start -->
+      <dd>
+        <%= @reflexion_question.reflexion_question %>
+      </dd>
+      <!-- Display reflexion_question end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@reflexion_question.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@reflexion_question.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

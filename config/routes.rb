@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Reflexion question resource:
+
+  # CREATE
+  get("/reflexion_questions/new", { :controller => "reflexion_questions", :action => "new_form" })
+  post("/create_reflexion_question", { :controller => "reflexion_questions", :action => "create_row" })
+
+  # READ
+  get("/reflexion_questions", { :controller => "reflexion_questions", :action => "index" })
+  get("/reflexion_questions/:id_to_display", { :controller => "reflexion_questions", :action => "show" })
+
+  # UPDATE
+  get("/reflexion_questions/:prefill_with_id/edit", { :controller => "reflexion_questions", :action => "edit_form" })
+  post("/update_reflexion_question/:id_to_modify", { :controller => "reflexion_questions", :action => "update_row" })
+
+  # DELETE
+  get("/delete_reflexion_question/:id_to_remove", { :controller => "reflexion_questions", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Question tip resource:
 
   # CREATE
