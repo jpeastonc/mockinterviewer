@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/user_questions/new", { :controller => "user_questions", :action => "new_form" })
   post("/create_user_question", { :controller => "user_questions", :action => "create_row" })
+  post("/create_user_question_from_question", { :controller => "user_questions", :action => "create_row_from_question" })
 
   # READ
   get("/user_questions", { :controller => "user_questions", :action => "index" })
@@ -47,6 +48,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/reflexion_questions/new", { :controller => "reflexion_questions", :action => "new_form" })
   post("/create_reflexion_question", { :controller => "reflexion_questions", :action => "create_row" })
+  post("/create_reflexion_question_from_question", { :controller => "reflexion_questions", :action => "create_row_from_question" })
 
   # READ
   get("/reflexion_questions", { :controller => "reflexion_questions", :action => "index" })
@@ -67,6 +69,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/question_tips/new", { :controller => "question_tips", :action => "new_form" })
   post("/create_question_tip", { :controller => "question_tips", :action => "create_row" })
+  post("/create_question_tip_from_question", { :controller => "question_tips", :action => "create_row_from_question" })
 
   # READ
   get("/question_tips", { :controller => "question_tips", :action => "index" })
@@ -115,6 +118,8 @@ Rails.application.routes.draw do
   # CREATE
   get("/question_categories/new", { :controller => "question_categories", :action => "new_form" })
   post("/create_question_category", { :controller => "question_categories", :action => "create_row" })
+  post("/create_question_category_from_category", { :controller => "question_categories", :action => "create_row_from_category" })
+  post("/create_question_category_from_question", { :controller => "question_categories", :action => "create_row_from_question" })
 
   # READ
   get("/question_categories", { :controller => "question_categories", :action => "index" })

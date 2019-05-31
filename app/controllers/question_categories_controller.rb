@@ -32,6 +32,36 @@ class QuestionCategoriesController < ApplicationController
     end
   end
 
+  def create_row_from_question
+    @question_category = QuestionCategory.new
+
+    @question_category.question_id = params.fetch("question_id")
+    @question_category.category_id = params.fetch("category_id")
+
+    if @question_category.valid?
+      @question_category.save
+
+      redirect_to("/questions/#{@question_category.question_id}", notice: "QuestionCategory created successfully.")
+    else
+      render("question_category_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_category
+    @question_category = QuestionCategory.new
+
+    @question_category.question_id = params.fetch("question_id")
+    @question_category.category_id = params.fetch("category_id")
+
+    if @question_category.valid?
+      @question_category.save
+
+      redirect_to("/categories/#{@question_category.category_id}", notice: "QuestionCategory created successfully.")
+    else
+      render("question_category_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @question_category = QuestionCategory.find(params.fetch("prefill_with_id"))
 

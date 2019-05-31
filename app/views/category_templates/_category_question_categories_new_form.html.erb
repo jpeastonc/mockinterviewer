@@ -1,0 +1,25 @@
+<!-- Form question_category start -->
+<form action="/create_question_category_from_category" method="post">
+<!-- Form question_category end -->
+
+  <!-- Label and input for question_id start -->
+  <div class="form-group">
+    <label for="question_id">
+      Question
+    </label>
+
+    <!-- Input for question_id start -->
+    <input type="text" id="question_id" name="question_id" class="form-control" value="<%= @question_category.question_id %>">
+    <!-- Input for question_id end -->
+  </div>
+  <!-- Label and input for question_id end -->
+
+  <!-- Label and input for category_id start -->
+  <!-- Input for category_id start -->
+  <input type="hidden" name="category_id" value="<%= @category.id %>">
+  <!-- Input for category_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create question category
+  </button>
+</form>

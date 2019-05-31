@@ -32,6 +32,21 @@ class ReflexionQuestionsController < ApplicationController
     end
   end
 
+  def create_row_from_question
+    @reflexion_question = ReflexionQuestion.new
+
+    @reflexion_question.question_id = params.fetch("question_id")
+    @reflexion_question.reflexion_question = params.fetch("reflexion_question")
+
+    if @reflexion_question.valid?
+      @reflexion_question.save
+
+      redirect_to("/questions/#{@reflexion_question.question_id}", notice: "ReflexionQuestion created successfully.")
+    else
+      render("reflexion_question_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @reflexion_question = ReflexionQuestion.find(params.fetch("prefill_with_id"))
 

@@ -32,6 +32,21 @@ class UserQuestionsController < ApplicationController
     end
   end
 
+  def create_row_from_question
+    @user_question = UserQuestion.new
+
+    @user_question.user_id = params.fetch("user_id")
+    @user_question.question_id = params.fetch("question_id")
+
+    if @user_question.valid?
+      @user_question.save
+
+      redirect_to("/questions/#{@user_question.question_id}", notice: "UserQuestion created successfully.")
+    else
+      render("user_question_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @user_question = UserQuestion.find(params.fetch("prefill_with_id"))
 

@@ -6,6 +6,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
+    @question_category = QuestionCategory.new
     @category = Category.find(params.fetch("id_to_display"))
 
     render("category_templates/show.html.erb")

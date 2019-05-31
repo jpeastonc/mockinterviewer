@@ -6,6 +6,10 @@ class QuestionsController < ApplicationController
   end
 
   def show
+    @reflexion_question = ReflexionQuestion.new
+    @user_question = UserQuestion.new
+    @question_tip = QuestionTip.new
+    @question_category = QuestionCategory.new
     @question = Question.find(params.fetch("id_to_display"))
 
     render("question_templates/show.html.erb")

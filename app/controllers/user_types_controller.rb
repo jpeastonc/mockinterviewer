@@ -6,6 +6,7 @@ class UserTypesController < ApplicationController
   end
 
   def show
+    @user = User.new
     @user_type = UserType.find(params.fetch("id_to_display"))
 
     render("user_type_templates/show.html.erb")

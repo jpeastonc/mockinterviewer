@@ -32,6 +32,21 @@ class QuestionTipsController < ApplicationController
     end
   end
 
+  def create_row_from_question
+    @question_tip = QuestionTip.new
+
+    @question_tip.question_id = params.fetch("question_id")
+    @question_tip.content = params.fetch("content")
+
+    if @question_tip.valid?
+      @question_tip.save
+
+      redirect_to("/questions/#{@question_tip.question_id}", notice: "QuestionTip created successfully.")
+    else
+      render("question_tip_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @question_tip = QuestionTip.find(params.fetch("prefill_with_id"))
 
