@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the User type resource:
+
+  # CREATE
+  get("/user_types/new", { :controller => "user_types", :action => "new_form" })
+  post("/create_user_type", { :controller => "user_types", :action => "create_row" })
+
+  # READ
+  get("/user_types", { :controller => "user_types", :action => "index" })
+  get("/user_types/:id_to_display", { :controller => "user_types", :action => "show" })
+
+  # UPDATE
+  get("/user_types/:prefill_with_id/edit", { :controller => "user_types", :action => "edit_form" })
+  post("/update_user_type/:id_to_modify", { :controller => "user_types", :action => "update_row" })
+
+  # DELETE
+  get("/delete_user_type/:id_to_remove", { :controller => "user_types", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Reflexion question resource:
 
   # CREATE
