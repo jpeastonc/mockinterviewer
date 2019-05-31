@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Evaluation resource:
+
+  # CREATE
+  get("/evaluations/new", { :controller => "evaluations", :action => "new_form" })
+  post("/create_evaluation", { :controller => "evaluations", :action => "create_row" })
+
+  # READ
+  get("/evaluations", { :controller => "evaluations", :action => "index" })
+  get("/evaluations/:id_to_display", { :controller => "evaluations", :action => "show" })
+
+  # UPDATE
+  get("/evaluations/:prefill_with_id/edit", { :controller => "evaluations", :action => "edit_form" })
+  post("/update_evaluation/:id_to_modify", { :controller => "evaluations", :action => "update_row" })
+
+  # DELETE
+  get("/delete_evaluation/:id_to_remove", { :controller => "evaluations", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Question category resource:
 
   # CREATE

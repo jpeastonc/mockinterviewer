@@ -1,0 +1,56 @@
+<h1>
+  Edit evaluation #<%= @evaluation.id %>
+</h1>
+
+<hr>
+
+<!-- Form evaluation start -->
+<form action="/update_evaluation/<%= @evaluation.id %>" method="post">
+<!-- Form evaluation end -->
+
+  <!-- Label and input for rating start -->
+  <div class="form-group">
+    <label for="rating">
+      Rating
+    </label>
+
+    <!-- Input for rating start -->
+    <input type="text" id="rating" name="rating" class="form-control" value="<%= @evaluation.rating %>">
+    <!-- Input for rating end -->
+  </div>
+  <!-- Label and input for rating end -->
+
+  <!-- Label and input for comment start -->
+  <div class="form-group">
+    <label for="comment">
+      Comment
+    </label>
+
+    <!-- Input for comment start -->
+    <input type="text" id="comment" name="comment" class="form-control" value="<%= @evaluation.comment %>">
+    <!-- Input for comment end -->
+  </div>
+  <!-- Label and input for comment end -->
+
+  <!-- Label and input for user_question_id start -->
+  <div class="form-group">
+    <label for="user_question_id">
+      User question
+    </label>
+
+    <!-- Input for user_question_id start -->
+    <input type="text" id="user_question_id" name="user_question_id" class="form-control" value="<%= @evaluation.user_question_id %>">
+    <!-- Input for user_question_id end -->
+  </div>
+  <!-- Label and input for user_question_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update evaluation
+  </button>
+</form>
+
+<hr>
+
+<a href="/evaluations">
+  Go back
+</a>
