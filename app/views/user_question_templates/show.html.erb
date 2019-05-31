@@ -34,7 +34,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @user_question.user_id %>
+        <% if @user_question.user.present? %>
+          <a href="/users/<%= @user_question.user_id %>">
+            <%= @user_question.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 
@@ -43,7 +47,11 @@
       </dt>
       <!-- Display question_id start -->
       <dd>
-        <%= @user_question.question_id %>
+        <% if @user_question.question.present? %>
+          <a href="/questions/<%= @user_question.question_id %>">
+            <%= @user_question.question.question %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display question_id end -->
 

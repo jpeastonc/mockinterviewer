@@ -58,7 +58,11 @@
 
         <!-- Display question_tip.question_id start -->
         <td>
-          <%= question_tip.question.question %>
+          <% if question_tip.question.present? %>
+            <a href="/questions/<%= question_tip.question.id %>">
+              <%= question_tip.question.question %>
+            </a>
+          <% end %>
         </td>
         <!-- Display question_tip.question_id end -->
 

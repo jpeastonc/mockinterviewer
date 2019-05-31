@@ -45,7 +45,11 @@
       </dt>
       <!-- Display user_type_id start -->
       <dd>
-        <%= @user.user_type_id %>
+        <% if @user.user_type.present? %>
+          <a href="/user_types/<%= @user.user_type_id %>">
+            <%= @user.user_type.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_type_id end -->
 

@@ -58,13 +58,21 @@
 
         <!-- Display user_question.user_id start -->
         <td>
-          <%= user_question.user.email %>
+          <% if user_question.user.present? %>
+            <a href="/users/<%= user_question.user.id %>">
+              <%= user_question.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display user_question.user_id end -->
 
         <!-- Display user_question.question_id start -->
         <td>
-          <%= user_question.question.question %>
+          <% if user_question.question.present? %>
+            <a href="/questions/<%= user_question.question.id %>">
+              <%= user_question.question.question %>
+            </a>
+          <% end %>
         </td>
         <!-- Display user_question.question_id end -->
 

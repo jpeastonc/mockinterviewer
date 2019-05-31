@@ -74,7 +74,11 @@
 
         <!-- Display evaluation.user_question_id start -->
         <td>
-          <%= evaluation.user_question.user_id %>
+          <% if evaluation.user_question.present? %>
+            <a href="/user_questions/<%= evaluation.user_question.id %>">
+              <%= evaluation.user_question.user_id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display evaluation.user_question_id end -->
 

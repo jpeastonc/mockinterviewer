@@ -34,7 +34,11 @@
       </dt>
       <!-- Display question_id start -->
       <dd>
-        <%= @question_tip.question_id %>
+        <% if @question_tip.question.present? %>
+          <a href="/questions/<%= @question_tip.question_id %>">
+            <%= @question_tip.question.question %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display question_id end -->
 

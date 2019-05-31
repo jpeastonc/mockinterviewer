@@ -58,13 +58,21 @@
 
         <!-- Display question_category.question_id start -->
         <td>
-          <%= question_category.question.question %>
+          <% if question_category.question.present? %>
+            <a href="/questions/<%= question_category.question.id %>">
+              <%= question_category.question.question %>
+            </a>
+          <% end %>
         </td>
         <!-- Display question_category.question_id end -->
 
         <!-- Display question_category.category_id start -->
         <td>
-          <%= question_category.category.category_name %>
+          <% if question_category.category.present? %>
+            <a href="/categories/<%= question_category.category.id %>">
+              <%= question_category.category.category_name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display question_category.category_id end -->
 

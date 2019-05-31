@@ -52,7 +52,11 @@
       </dt>
       <!-- Display user_question_id start -->
       <dd>
-        <%= @evaluation.user_question_id %>
+        <% if @evaluation.user_question.present? %>
+          <a href="/user_questions/<%= @evaluation.user_question_id %>">
+            <%= @evaluation.user_question.user_id %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_question_id end -->
 

@@ -34,7 +34,11 @@
       </dt>
       <!-- Display question_id start -->
       <dd>
-        <%= @question_category.question_id %>
+        <% if @question_category.question.present? %>
+          <a href="/questions/<%= @question_category.question_id %>">
+            <%= @question_category.question.question %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display question_id end -->
 
@@ -43,7 +47,11 @@
       </dt>
       <!-- Display category_id start -->
       <dd>
-        <%= @question_category.category_id %>
+        <% if @question_category.category.present? %>
+          <a href="/categories/<%= @question_category.category_id %>">
+            <%= @question_category.category.category_name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display category_id end -->
 

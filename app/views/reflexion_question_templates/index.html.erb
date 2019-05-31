@@ -58,7 +58,11 @@
 
         <!-- Display reflexion_question.question_id start -->
         <td>
-          <%= reflexion_question.question.question %>
+          <% if reflexion_question.question.present? %>
+            <a href="/questions/<%= reflexion_question.question.id %>">
+              <%= reflexion_question.question.question %>
+            </a>
+          <% end %>
         </td>
         <!-- Display reflexion_question.question_id end -->
 

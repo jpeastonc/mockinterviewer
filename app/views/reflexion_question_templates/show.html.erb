@@ -34,7 +34,11 @@
       </dt>
       <!-- Display question_id start -->
       <dd>
-        <%= @reflexion_question.question_id %>
+        <% if @reflexion_question.question.present? %>
+          <a href="/questions/<%= @reflexion_question.question_id %>">
+            <%= @reflexion_question.question.question %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display question_id end -->
 

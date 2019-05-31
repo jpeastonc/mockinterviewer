@@ -74,7 +74,11 @@
 
         <!-- Display user.user_type_id start -->
         <td>
-          <%= user.user_type.name %>
+          <% if user.user_type.present? %>
+            <a href="/user_types/<%= user.user_type.id %>">
+              <%= user.user_type.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display user.user_type_id end -->
 
