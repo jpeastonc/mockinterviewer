@@ -1,6 +1,6 @@
 class QuestionTipsController < ApplicationController
   def index
-    @question_tips = QuestionTip.all
+    @question_tips = QuestionTip.page(params[:page]).per(10)
 
     render("question_tip_templates/index.html.erb")
   end

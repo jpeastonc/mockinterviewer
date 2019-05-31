@@ -1,6 +1,6 @@
 class UserQuestionsController < ApplicationController
   def index
-    @user_questions = UserQuestion.all
+    @user_questions = UserQuestion.page(params[:page]).per(10)
 
     render("user_question_templates/index.html.erb")
   end

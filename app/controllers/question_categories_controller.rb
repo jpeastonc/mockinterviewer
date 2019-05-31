@@ -1,6 +1,6 @@
 class QuestionCategoriesController < ApplicationController
   def index
-    @question_categories = QuestionCategory.all
+    @question_categories = QuestionCategory.page(params[:page]).per(10)
 
     render("question_category_templates/index.html.erb")
   end
