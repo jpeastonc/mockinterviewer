@@ -9,6 +9,10 @@ class User < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :evaluations,
+             :through => :user_questions,
+             :source => :evaluation
+
   # Validations
 
   # Include default devise modules. Others available are:

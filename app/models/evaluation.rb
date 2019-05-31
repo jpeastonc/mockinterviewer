@@ -5,6 +5,10 @@ class Evaluation < ApplicationRecord
 
   # Indirect associations
 
+  has_one    :user,
+             :through => :user_question,
+             :source => :user
+
   # Validations
 
 end
