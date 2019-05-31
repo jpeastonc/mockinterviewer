@@ -6,6 +6,10 @@ class Category < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :questions,
+             :through => :question_categories,
+             :source => :question
+
   # Validations
 
 end
