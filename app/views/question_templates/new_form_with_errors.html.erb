@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @question.present? %>
   <% if @question.errors.any? %>
     <% @question.errors.full_messages.each do |message| %>
@@ -16,21 +15,15 @@
 
 <hr>
 
-<!-- Form question start -->
 <form action="/create_question" method="post">
-<!-- Form question end -->
 
-  <!-- Label and input for question start -->
   <div class="form-group">
     <label for="question">
       Question
     </label>
 
-    <!-- Input for question start -->
     <input type="text" id="question" name="question" class="form-control" value="<%= @question.question %>">
-    <!-- Input for question end -->
   </div>
-  <!-- Label and input for question end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create question

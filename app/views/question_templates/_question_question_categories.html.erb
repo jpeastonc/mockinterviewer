@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @question.question_categories.each do |question_category| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/question_categories/<%= question_category.id %>">
           <%= question_category.question_id %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_question_category_from_question/<%= question_category.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="question_question_categories_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "question_templates/question_question_categories_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

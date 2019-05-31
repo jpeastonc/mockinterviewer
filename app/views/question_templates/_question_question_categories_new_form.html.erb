@@ -1,23 +1,14 @@
-<!-- Form question_category start -->
 <form action="/create_question_category_from_question" method="post">
-<!-- Form question_category end -->
 
-  <!-- Label and input for question_id start -->
-  <!-- Input for question_id start -->
   <input type="hidden" name="question_id" value="<%= @question.id %>">
-  <!-- Input for question_id end -->
 
-  <!-- Label and input for category_id start -->
   <div class="form-group">
     <label for="category_id">
       Category
     </label>
 
-    <!-- Input for category_id start -->
     <%= select_tag(:category_id, options_from_collection_for_select(Category.all, :id, :category_name, @question_category.category_id), :class => "form-control") %>
-    <!-- Input for category_id end -->
   </div>
-  <!-- Label and input for category_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create question category

@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @question_tip.present? %>
   <% if @question_tip.errors.any? %>
     <% @question_tip.errors.full_messages.each do |message| %>
@@ -16,33 +15,23 @@
 
 <hr>
 
-<!-- Form question_tip start -->
 <form action="/create_question_tip" method="post">
-<!-- Form question_tip end -->
 
-  <!-- Label and input for question_id start -->
   <div class="form-group">
     <label for="question_id">
       Question
     </label>
 
-    <!-- Input for question_id start -->
     <%= select_tag(:question_id, options_from_collection_for_select(Question.all, :id, :question, @question_tip.question_id), :class => "form-control") %>
-    <!-- Input for question_id end -->
   </div>
-  <!-- Label and input for question_id end -->
 
-  <!-- Label and input for content start -->
   <div class="form-group">
     <label for="content">
       Content
     </label>
 
-    <!-- Input for content start -->
     <input type="text" id="content" name="content" class="form-control" value="<%= @question_tip.content %>">
-    <!-- Input for content end -->
   </div>
-  <!-- Label and input for content end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create question tip

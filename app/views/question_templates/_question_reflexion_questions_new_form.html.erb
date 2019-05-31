@@ -1,23 +1,14 @@
-<!-- Form reflexion_question start -->
 <form action="/create_reflexion_question_from_question" method="post">
-<!-- Form reflexion_question end -->
 
-  <!-- Label and input for question_id start -->
-  <!-- Input for question_id start -->
   <input type="hidden" name="question_id" value="<%= @question.id %>">
-  <!-- Input for question_id end -->
 
-  <!-- Label and input for reflexion_question start -->
   <div class="form-group">
     <label for="reflexion_question">
       Reflexion question
     </label>
 
-    <!-- Input for reflexion_question start -->
     <input type="text" id="reflexion_question" name="reflexion_question" class="form-control" value="<%= @reflexion_question.reflexion_question %>">
-    <!-- Input for reflexion_question end -->
   </div>
-  <!-- Label and input for reflexion_question end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create reflexion question

@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @user_type.users.each do |user| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/users/<%= user.id %>">
           <%= user.email %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_user_from_user_type/<%= user.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="user_type_users_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "user_type_templates/user_type_users_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

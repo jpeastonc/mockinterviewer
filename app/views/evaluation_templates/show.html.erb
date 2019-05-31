@@ -11,46 +11,37 @@
         </a>
       </div>
 
-      <!-- Edit link evaluation start -->
       <div class="col">
         <a href="/evaluations/<%= @evaluation.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit evaluation
         </a>
       </div>
-      <!-- Edit link evaluation end -->
 
-      <!-- Delete link evaluation start -->
       <div class="col">
         <a href="/delete_evaluation/<%= @evaluation.id %>" class="btn btn-block btn-outline-secondary">
           Delete evaluation
         </a>
       </div>
-      <!-- Delete link evaluation end -->
     </div>
 
     <dl>
       <dt>
         Rating
       </dt>
-      <!-- Display rating start -->
       <dd>
         <%= @evaluation.rating %>
       </dd>
-      <!-- Display rating end -->
 
       <dt>
         Comment
       </dt>
-      <!-- Display comment start -->
       <dd>
         <%= @evaluation.comment %>
       </dd>
-      <!-- Display comment end -->
 
       <dt>
         User question
       </dt>
-      <!-- Display user_question_id start -->
       <dd>
         <% if @evaluation.user_question.present? %>
           <a href="/user_questions/<%= @evaluation.user_question_id %>">
@@ -58,28 +49,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_question_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@evaluation.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@evaluation.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

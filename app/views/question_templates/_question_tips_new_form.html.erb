@@ -1,23 +1,14 @@
-<!-- Form question_tip start -->
 <form action="/create_question_tip_from_question" method="post">
-<!-- Form question_tip end -->
 
-  <!-- Label and input for question_id start -->
-  <!-- Input for question_id start -->
   <input type="hidden" name="question_id" value="<%= @question.id %>">
-  <!-- Input for question_id end -->
 
-  <!-- Label and input for content start -->
   <div class="form-group">
     <label for="content">
       Content
     </label>
 
-    <!-- Input for content start -->
     <input type="text" id="content" name="content" class="form-control" value="<%= @question_tip.content %>">
-    <!-- Input for content end -->
   </div>
-  <!-- Label and input for content end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create question tip

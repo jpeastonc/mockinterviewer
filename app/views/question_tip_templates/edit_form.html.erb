@@ -4,33 +4,23 @@
 
 <hr>
 
-<!-- Form question_tip start -->
 <form action="/update_question_tip/<%= @question_tip.id %>" method="post">
-<!-- Form question_tip end -->
 
-  <!-- Label and input for question_id start -->
   <div class="form-group">
     <label for="question_id">
       Question
     </label>
 
-    <!-- Input for question_id start -->
     <%= select_tag(:question_id, options_from_collection_for_select(Question.all, :id, :question, @question_tip.question_id), :class => "form-control") %>
-    <!-- Input for question_id end -->
   </div>
-  <!-- Label and input for question_id end -->
 
-  <!-- Label and input for content start -->
   <div class="form-group">
     <label for="content">
       Content
     </label>
 
-    <!-- Input for content start -->
     <input type="text" id="content" name="content" class="form-control" value="<%= @question_tip.content %>">
-    <!-- Input for content end -->
   </div>
-  <!-- Label and input for content end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update question tip

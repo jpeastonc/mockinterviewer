@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @reflexion_question.errors.any? %>
   <% @reflexion_question.errors.full_messages.each do |message| %>
     <div class="alert">
@@ -13,33 +12,23 @@
 
 <hr>
 
-<!-- Form reflexion_question start -->
 <form action="/update_reflexion_question/<%= @reflexion_question.id %>" method="post">
-<!-- Form reflexion_question end -->
 
-  <!-- Label and input for question_id start -->
   <div class="form-group">
     <label for="question_id">
       Question
     </label>
 
-    <!-- Input for question_id start -->
     <%= select_tag(:question_id, options_from_collection_for_select(Question.all, :id, :question, @reflexion_question.question_id), :class => "form-control") %>
-    <!-- Input for question_id end -->
   </div>
-  <!-- Label and input for question_id end -->
 
-  <!-- Label and input for reflexion_question start -->
   <div class="form-group">
     <label for="reflexion_question">
       Reflexion question
     </label>
 
-    <!-- Input for reflexion_question start -->
     <input type="text" id="reflexion_question" name="reflexion_question" class="form-control" value="<%= @reflexion_question.reflexion_question %>">
-    <!-- Input for reflexion_question end -->
   </div>
-  <!-- Label and input for reflexion_question end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update reflexion question
