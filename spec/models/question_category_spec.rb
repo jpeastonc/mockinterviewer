@@ -4,6 +4,8 @@ RSpec.describe QuestionCategory, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:category) }
+
     it { should belong_to(:question) }
 
     end
