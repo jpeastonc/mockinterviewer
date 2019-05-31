@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Question tip resource:
+
+  # CREATE
+  get("/question_tips/new", { :controller => "question_tips", :action => "new_form" })
+  post("/create_question_tip", { :controller => "question_tips", :action => "create_row" })
+
+  # READ
+  get("/question_tips", { :controller => "question_tips", :action => "index" })
+  get("/question_tips/:id_to_display", { :controller => "question_tips", :action => "show" })
+
+  # UPDATE
+  get("/question_tips/:prefill_with_id/edit", { :controller => "question_tips", :action => "edit_form" })
+  post("/update_question_tip/:id_to_modify", { :controller => "question_tips", :action => "update_row" })
+
+  # DELETE
+  get("/delete_question_tip/:id_to_remove", { :controller => "question_tips", :action => "destroy_row" })
+
+  #------------------------------
+
   devise_for :users
   # Routes for the User resource:
 
